@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomePageComponent } from './home-page/home-page.component';
-import { OrderComponent } from './order/order.component';
-import { OrderListComponent } from './order-list/order-list.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component'
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { OrderComponent } from './pages/order/order.component';
+import { OrderListComponent } from './pages/order-list/order-list.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component'
 
 const routes: Routes = [
   { path: '', redirectTo: '/home-page', pathMatch: 'full' },

@@ -3,10 +3,10 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import { AppRoutingModule } from './app-routing.module';
-import { HomePageComponent } from './home-page/home-page.component';
-import { OrderListComponent } from './order-list/order-list.component';
-import { OrderComponent } from './order/order.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
+import { OrderListComponent } from './pages/order-list/order-list.component';
+import { OrderComponent } from './pages/order/order.component';
+import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
