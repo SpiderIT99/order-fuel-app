@@ -1,0 +1,31 @@
+.active, .active:active {
+    text-decoration: underline;
+    text-decoration-color: #5a1a77;
+    text-underline-offset: 10px;
+}
+a, a:active{
+    color: #545454;
+    text-decoration: none;
+}
+.container{
+    height: 40px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    cursor: pointer;
+}
+.navigation a{
+    transition: all 3s ease 0s;
+    padding: 0 20px;
+}
+.navigation a:hover{
+    transition: all 0.5s ease 0s;
+    color: #5a1a77;
+}
+img{
+    padding: 0 5px 0 20px;
+}
