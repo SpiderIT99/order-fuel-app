@@ -16,7 +16,13 @@ a, a:active{
     align-items: center;
 }
 .logo{
+    display: flex;
+    align-items: center;
     cursor: pointer;
+}
+.logo img{
+    height: 50px;
+
 }
 .navigation a{
     transition: all 3s ease 0s;
@@ -25,7 +31,4 @@ a, a:active{
 .navigation a:hover{
     transition: all 0.5s ease 0s;
     color: #5a1a77;
-}
-img{
-    padding: 0 5px 0 20px;
 }
