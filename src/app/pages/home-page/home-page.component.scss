@@ -1,19 +1,32 @@
-.main-section{
-    height: 83vh;
-}
 footer{
     height: 7vh;
-    background-color: #9900CC;
+    background-color: #d05484;
 }
 .main-section{
+    height: 83vh;
     display: flex;
-    text-align: center;
     align-items: center;
     justify-content: center;
 }
-.about-application{
-    width: 60vw;
+.display{
+    width: 50vw;
 }
-.application-screen{
-    width: 40vw;
+.application-screen img{
+    height: 300px;
+}
+.about-application{
+    text-align: left;
+    padding: 0 20px 0 100px;
+}
+.about-application h2{
+    margin: 5px 0 25px 0;
+}
+.square{
+    background-color: #d05484;
+    width: 100px;
+    height: 10px;
+    border-radius: 1px;
+}
+.bottom-square{
+    background-color: #f8e59a;
 }
