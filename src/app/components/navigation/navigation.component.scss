@@ -1,16 +1,23 @@
-.active, .active:active {
+.active {
     text-decoration: underline;
     text-decoration-color: #5a1a77;
     text-underline-offset: 10px;
 }
-a, a:active{
+h1{
     color: #545454;
+    font-weight: 400;
+}
+a{
+    color: #545454;
+    transition: all 3s ease 0s;
+    padding: 0 20px;
     text-decoration: none;
 }
 .container{
     height: 10vh;
 }
 .container{
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -22,13 +29,4 @@ a, a:active{
 }
 .logo img{
     height: 50px;
-
-}
-.navigation a{
-    transition: all 3s ease 0s;
-    padding: 0 20px;
-}
-.navigation a:hover{
-    transition: all 0.5s ease 0s;
-    color: #5a1a77;
 }
