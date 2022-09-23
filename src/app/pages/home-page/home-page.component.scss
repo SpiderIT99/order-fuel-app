@@ -1,0 +1,38 @@
+.main-section{
+    height: 83vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.display{
+    width: 50vw;
+}
+.application-screen img{
+    height: 300px;
+}
+.about-application{
+    text-align: left;
+    padding: 0 20px 0 100px;
+}
+.about-application h2{
+    margin: 5px 0 25px 0;
+}
+.square{
+    background-color: #d05484;
+    width: 100px;
+    height: 10px;
+    border-radius: 1px;
+}
+footer{
+    height: 7vh;
+    background-color: #d05484;
+    display: flex;
+    align-items:flex-end;
+    justify-content:space-around;
+}
+.bottom-square{
+    background-color: #f8e59a;
+    height: 10px;
+    width: 100px;
+    border-radius: 5px 5px 0 0;
+}
