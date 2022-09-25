@@ -13,8 +13,9 @@ a{
     padding: 0 20px;
     text-decoration: none;
 }
-.container{
-    height: 10vh;
+a:hover{
+    color: #5a1a77;
+    transition: all 0.5s ease 0s;
 }
 .container{
     height: 10vh;
