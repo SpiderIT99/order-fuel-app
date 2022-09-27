@@ -10,11 +10,12 @@ export class OrderBlockComponent implements OnInit {
   @Input() src: string = '';
   @Input() price: string = '';
   @Input() unit: string = '';
-
-
+  alt = this.src;
+  fullSrc='';
   constructor() { }
 
   ngOnInit(): void {
+  this.fullSrc=('../../../assets/img/'+ this.src + '.png');
   }
 
 }
