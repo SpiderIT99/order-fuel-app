@@ -1,1 +1,3 @@
-<app-order-block></app-order-block>
+<div *ngFor="let item of orderBlockData;">
+    <app-order-block name="{{item.name}}" src="{{item.src}}" price="{{item.price}}" unit="{{item.unit}}"></app-order-block>
+</div>

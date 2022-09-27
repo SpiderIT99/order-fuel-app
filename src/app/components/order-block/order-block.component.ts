@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-order-block',
@@ -6,10 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./order-block.component.scss']
 })
 export class OrderBlockComponent implements OnInit {
-  name ="Węgiel";
-  price = "1600";
-  unit = "T";
-  src = "coal";
+  @Input() name: string = '';
+  @Input() src: string = '';
+  @Input() price: string = '';
+  @Input() unit: string = '';
 
 
   constructor() { }
