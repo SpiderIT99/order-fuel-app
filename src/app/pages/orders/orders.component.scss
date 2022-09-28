@@ -1,0 +1,8 @@
+.container{
+    margin-top: 50px;
+    display: grid;
+    justify-content:center;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 25px;
+    row-gap: 25px;
+}
