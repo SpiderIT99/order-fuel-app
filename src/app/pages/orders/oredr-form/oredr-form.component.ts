@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Validators } from "@angular/forms";
 
+
+export type EditorType = 'personalData' | 'orderDetails' ;
+
 @Component({
   selector: 'app-oredr-form',
   templateUrl: './oredr-form.component.html',
@@ -13,6 +16,7 @@ export class OredrFormComponent implements OnInit {
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.updateData();
   }
 
   public orderForm = this.fb.group({
@@ -34,5 +38,32 @@ export class OredrFormComponent implements OnInit {
       buildingNumber: [null, Validators.required],
     })
   })
+
+  updateData() {
+    this.orderForm.patchValue({
+      fuel: {
+        name: 'name',
+        price: 'price',
+        unit: 'unit',
+        src: 'src'
+      }
+    });
+  }
+
+  onSubmit() {
+    console.log("data form: ", this.orderForm.value);
+  }
+
+  editor: EditorType = 'personalData';
+  get showPersonalData() {
+    return this.editor === 'personalData';
+  }
+  get showOrderDetails() {
+    return this.editor === 'orderDetails';
+  }
+ 
+  toggleScreen(type: EditorType) {
+    this.editor = type;
+  }
 
 }
