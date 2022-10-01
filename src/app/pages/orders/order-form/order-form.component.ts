@@ -8,12 +8,12 @@ export type EditorType = 'personalData' | 'orderDetails';
 
 
 @Component({
-  selector: 'app-oredr-form',
-  templateUrl: './oredr-form.component.html',
-  styleUrls: ['./oredr-form.component.scss']
+  selector: 'app-order-form',
+  templateUrl: './order-form.component.html',
+  styleUrls: ['./order-form.component.scss']
 })
 
-export class OredrFormComponent implements OnInit {
+export class OrderFormComponent implements OnInit {
 
   constructor(private fb: FormBuilder) { }
 
