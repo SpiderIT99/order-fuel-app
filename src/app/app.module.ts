@@ -9,7 +9,7 @@ import { OrdersComponent } from './pages/orders/orders.component';
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { OrderBlockComponent } from './components/order-block/order-block.component';
-import { OredrFormComponent } from './pages/orders/oredr-form/oredr-form.component';
+import { OredrFormComponent } from './pages/orders/order-form/oredr-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ItemFormOrderComponent } from './components/item-form-order/item-form-order.component';
 

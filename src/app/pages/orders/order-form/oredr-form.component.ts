@@ -3,7 +3,9 @@ import { FormBuilder } from '@angular/forms';
 import { Validators } from "@angular/forms";
 
 
-export type EditorType = 'personalData' | 'orderDetails' ;
+export type EditorType = 'personalData' | 'orderDetails';
+
+
 
 @Component({
   selector: 'app-oredr-form',
@@ -26,7 +28,7 @@ export class OredrFormComponent implements OnInit {
       unit: [null],
       src: [null],
     }),
-    description: [null, Validators.required],
+    description: [null, Validators.required, Validators.max(200)],
     phoneNumber: [null, Validators.required],
     // email: [null, [Validators.required, email]],
     email: [null, [Validators.required]],
@@ -61,7 +63,7 @@ export class OredrFormComponent implements OnInit {
   get showOrderDetails() {
     return this.editor === 'orderDetails';
   }
- 
+
   toggleScreen(type: EditorType) {
     this.editor = type;
   }
