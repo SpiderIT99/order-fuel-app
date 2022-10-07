@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
-import { Validators } from "@angular/forms";
+import { FormBuilder, Validators } from '@angular/forms';
+import { validateAllFormFields } from './oredr-form-validators'
 
 
 export type EditorType = 'personalData' | 'orderDetails';
@@ -28,7 +28,7 @@ export class OrderFormComponent implements OnInit {
       unit: [null],
       src: [null],
     }),
-    description: [null, Validators.required, Validators.max(200)],
+    description: [null, [Validators.required, Validators.maxLength(200)]],
     phoneNumber: [null, Validators.required],
     // email: [null, [Validators.required, email]],
     email: [null, [Validators.required]],
@@ -53,7 +53,7 @@ export class OrderFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log("data form: ", this.orderForm.value);
+    validateAllFormFields(this.orderForm);
   }
 
   editor: EditorType = 'personalData';
@@ -67,5 +67,4 @@ export class OrderFormComponent implements OnInit {
   toggleScreen(type: EditorType) {
     this.editor = type;
   }
-
 }
