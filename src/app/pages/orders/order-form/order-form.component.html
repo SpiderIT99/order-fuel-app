@@ -1,17 +1,18 @@
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
     <div *ngIf=showPersonalData>
-        <app-item-form-order [placeholder]="'count'" [span]="'count'" [formControlNameValue]="orderForm.get('count')">
+        <app-item-form-order #count [placeholder]="'count'" [span]="'count'" [formControlNameValue]="orderForm.get('count')">
         </app-item-form-order>
         <app-item-form-order [placeholder]="'price'" [span]="'price'"
             [formControlNameValue]="orderForm.controls['fuel'].get('price')"></app-item-form-order>
         <app-item-form-order [placeholder]="'unit'" [span]="'unit'"
             [formControlNameValue]="orderForm.controls['fuel'].get('unit')"></app-item-form-order>
-        <app-item-form-order [placeholder]="'description'" [span]="'description'"
+        <app-item-form-order #description [placeholder]="'description'" [span]="'description'"
             [formControlNameValue]="orderForm.get('description')">
         </app-item-form-order>
         <nav>
-            <button type="button" (click)="toggleScreen('orderDetails')">Dalej</button>
+            <button type="button" (click)="checkStepOne()">Dalej</button>
         </nav>
+        <div *ngIf="isErrorStepOne" class="errorStepForm">{{errorStepForm}}</div>
     </div>
 
     <div *ngIf=showOrderDetails>

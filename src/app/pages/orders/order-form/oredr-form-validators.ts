@@ -15,6 +15,11 @@ export function validateAllFormFields(formGroup: FormGroup | FormArray) {
     formGroup.updateValueAndValidity();
 }
 
+export function validateSingleFormField(fieldForm: FormControl) {
+    fieldForm.markAsTouched({ onlySelf: true });
+    fieldForm.updateValueAndValidity({ onlySelf: true });
+};
+
 export function getValidationMessage(validator: string,
     validatorValue?: any): string {
     // const messages = {
