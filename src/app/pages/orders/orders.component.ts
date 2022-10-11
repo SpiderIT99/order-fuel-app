@@ -26,11 +26,15 @@ export class OrdersComponent implements OnInit {
     this.getFuel();
   }
 
-  activateForm(name: string, src: string, price: string, unit: string) {
+  activateForm(name: string, src: string, price: string, unit: string): void {
     this.nameToForm = name;
     this.srcToForm = src;
     this.priceToForm = price;
     this.unitToForm = unit;
     this.activeForm = true;
+  }
+
+  exitForm(): void{
+    this.activeForm = false;
   }
 }

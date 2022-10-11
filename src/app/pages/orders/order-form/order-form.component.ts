@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, ViewChild, Input, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateAllFormFields, validateSingleFormField } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
@@ -18,7 +18,7 @@ export class OrderFormComponent implements OnInit {
   @Input() price: string = '';
   @Input() unit: string = '';
   @Input() src: string = '';
-
+  @Output() exitForm = new EventEmitter<string>();
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
 
@@ -48,7 +48,7 @@ export class OrderFormComponent implements OnInit {
     })
   })
 
-  updateData() {
+  updateData(): void {
     this.orderForm.patchValue({
       fuel: {
         name: this.name,
@@ -72,7 +72,7 @@ export class OrderFormComponent implements OnInit {
     // console.log(this.orderForm.value);
   }
 
-  checkStepOne() {
+  checkStepOne(): void {
     if (this.orderForm.get('count')?.errors || this.orderForm.get('description')?.errors) {
       this.isErrorStepOne = true;
       validateSingleFormField(this.fieldCount.formControlNameValue);
@@ -84,7 +84,11 @@ export class OrderFormComponent implements OnInit {
     }
   }
 
-  toggleScreen(type: EditorType) {
+  toggleScreen(type: EditorType): void {
     this.editor = type;
+  }
+  
+  exitFormInParent(): void {
+    this.exitForm.emit();
   }
 }

@@ -5,7 +5,8 @@
         </app-order-block>
     </div>
     <div *ngIf="activeForm">
-        <app-order-form [name]="nameToForm" [src]="srcToForm" [price]="priceToForm" [unit]="unitToForm">
+        <app-order-form [name]="nameToForm" [src]="srcToForm" [price]="priceToForm" [unit]="unitToForm"
+        (exitForm)="exitForm()">
         </app-order-form>
     </div>
 </div>
