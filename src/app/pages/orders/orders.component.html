@@ -1,7 +1,11 @@
 <div class="container">
     <div *ngFor="let item of orderBlockData;">
-        <app-order-block name="{{item.name}}" src="{{item.src}}" price="{{item.price}}" unit="{{item.unit}}">
+        <app-order-block [name]="item.name" [src]="item.src" [price]="item.price" [unit]="item.unit"
+            (click)="activateForm(item.name, item.src, item.price, item.unit)">
         </app-order-block>
     </div>
+    <div *ngIf="activeForm">
+        <app-order-form [name]="nameToForm" [src]="srcToForm" [price]="priceToForm" [unit]="unitToForm">
+        </app-order-form>
+    </div>
 </div>
-<app-order-form></app-order-form>

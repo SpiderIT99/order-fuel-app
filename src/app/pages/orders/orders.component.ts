@@ -8,6 +8,11 @@ import { OrderService } from "../../_core/services/order.service";
 })
 export class OrdersComponent implements OnInit {
   public orderBlockData: any[] = [];
+  activeForm = false;
+  nameToForm: string = "";
+  srcToForm: string = "";
+  priceToForm: string = "";
+  unitToForm: string = "";
 
   constructor(private orderService: OrderService) { }
 
@@ -21,4 +26,11 @@ export class OrdersComponent implements OnInit {
     this.getFuel();
   }
 
+  activateForm(name: string, src: string, price: string, unit: string) {
+    this.nameToForm = name;
+    this.srcToForm = src;
+    this.priceToForm = price;
+    this.unitToForm = unit;
+    this.activeForm = true;
+  }
 }

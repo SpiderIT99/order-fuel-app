@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateAllFormFields, validateSingleFormField } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
@@ -14,6 +14,10 @@ export type EditorType = 'personalData' | 'orderDetails';
 export class OrderFormComponent implements OnInit {
   @ViewChild('count') fieldCount: ItemFormOrderComponent;
   @ViewChild('description') fielDescription: ItemFormOrderComponent;
+  @Input() name: string = '';
+  @Input() price: string = '';
+  @Input() unit: string = '';
+  @Input() src: string = '';
 
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
@@ -47,10 +51,10 @@ export class OrderFormComponent implements OnInit {
   updateData() {
     this.orderForm.patchValue({
       fuel: {
-        name: 'name',
-        price: 'price',
-        unit: 'unit',
-        src: 'src'
+        name: this.name,
+        price: this.price,
+        unit: this.unit,
+        src: this.src
       }
     });
   }
