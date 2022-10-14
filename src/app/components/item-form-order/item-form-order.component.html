@@ -1,5 +1,5 @@
 <div class="input">
-    <input class="inputText" placeholder="{{placeholder}}" [formControl]="formControlNameValue" />
+    <input class="input-text" placeholder="{{placeholder}}" [formControl]="formControlNameValue" />
     <span class="floating-label">{{span}}</span>
-    <span *ngIf="(error$ | async) as error" class="errorHolder">{{ error }}</span>
+    <span *ngIf="(error$ | async) as error" class="error-holder">{{ error }}</span>
 </div>

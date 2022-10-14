@@ -1,5 +1,5 @@
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-    <button type="button" class="exitForm" (click)="exitFormInParent()">x</button>
+    <button type="button" class="exit-form" (click)="exitFormInParent()">x</button>
     <div *ngIf=showPersonalData>
         <app-item-form-order #count [placeholder]="'count'" [span]="'count'" [formControlNameValue]="orderForm.get('count')">
         </app-item-form-order>
@@ -13,7 +13,7 @@
         <nav>
             <button type="button" (click)="checkStepOne()">Dalej</button>
         </nav>
-        <div *ngIf="isErrorStepOne" class="errorStepForm">{{errorStepForm}}</div>
+        <div *ngIf="isErrorStepOne" class="error-step-form">{{errorStepForm}}</div>
     </div>
 
     <div *ngIf=showOrderDetails>
