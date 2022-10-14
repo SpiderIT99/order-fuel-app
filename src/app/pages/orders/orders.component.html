@@ -1,12 +1,15 @@
 <div class="container">
-    <div *ngFor="let item of orderBlockData;">
-        <app-order-block [name]="item.name" [src]="item.src" [price]="item.price" [unit]="item.unit"
-            (click)="activateForm(item.name, item.src, item.price, item.unit)">
-        </app-order-block>
+    <div class="shopping-options-container">
+        <div *ngFor="let item of orderBlockData;">
+            <app-order-block [name]="item.name" [src]="item.src" [price]="item.price" [unit]="item.unit"
+                (click)="activateForm(item.name, item.src, item.price, item.unit)">
+            </app-order-block>
+        </div>
     </div>
-    <div *ngIf="activeForm">
-        <app-order-form [name]="nameToForm" [src]="srcToForm" [price]="priceToForm" [unit]="unitToForm"
-        (exitForm)="exitForm()">
+    <div *ngIf="activeForm" class="active-form">
+        <app-order-form class="popup-form" [name]="nameToForm" [src]="srcToForm" [price]="priceToForm"
+            [unit]="unitToForm" (exitForm)="exitForm()">
         </app-order-form>
+        <div class="view-around-form" (click)="exitForm()"></div>
     </div>
 </div>
