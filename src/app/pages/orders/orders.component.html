@@ -6,10 +6,8 @@
             </app-order-block>
         </div>
     </div>
-    <div *ngIf="activeForm" class="active-form">
-        <app-order-form class="popup-form" [name]="nameToForm" [src]="srcToForm" [price]="priceToForm"
-            [unit]="unitToForm" (exitForm)="exitForm()">
+    <app-popup *ngIf="activeForm" (disablePopup)="exitForm()">
+        <app-order-form [name]="nameToForm" [src]="srcToForm" [price]="priceToForm" [unit]="unitToForm">
         </app-order-form>
-        <div class="view-around-form" (click)="exitForm()"></div>
-    </div>
+    </app-popup>
 </div>

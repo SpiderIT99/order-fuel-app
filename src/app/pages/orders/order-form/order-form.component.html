@@ -1,5 +1,4 @@
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
-    <button type="button" class="exit-form" (click)="exitFormInParent()">x</button>
     <div *ngIf=showPersonalData>
         <app-item-form-order #count [placeholder]="'count'" [span]="'count'" [formControlNameValue]="orderForm.get('count')">
         </app-item-form-order>

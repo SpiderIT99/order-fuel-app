@@ -8,23 +8,3 @@
     column-gap: 25px;
     row-gap: 25px;
 }
-.active-form{
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;    
-    justify-content: center;
-}
-.popup-form{
-    background-color: white;
-    border-radius: 10px;
-    z-index: 2;
-}
-.view-around-form{
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    z-index: 1;
-    background-color: black;
-    opacity: 0.5;
-}

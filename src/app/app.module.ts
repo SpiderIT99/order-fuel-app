@@ -12,6 +12,7 @@ import { OrderBlockComponent } from './components/order-block/order-block.compon
 import { OrderFormComponent } from './pages/orders/order-form/order-form.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ItemFormOrderComponent } from './components/item-form-order/item-form-order.component';
+import { PopupComponent } from './components/popup/popup.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { ItemFormOrderComponent } from './components/item-form-order/item-form-o
     OrderBlockComponent,
     OrderFormComponent,
     ItemFormOrderComponent,
+    PopupComponent,
   ],
   imports: [
     BrowserModule,
