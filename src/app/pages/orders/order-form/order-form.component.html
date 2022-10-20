@@ -1,16 +1,18 @@
 <form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
     <div class="container">
         <h1 class="title">{{name}}</h1>
-        <ng-container *ngIf=showPersonalData>
+        <ng-container *ngIf=personalDataForm>
             <div class="step-one-form">
-                <app-item-form-order #count [placeholder]="'count'" [span]="'count'"
+                <app-item-form-order #count [placeholder]="'99'" [span]="'Ilość'"
                     [formControlNameValue]="orderForm.get('count')">
                 </app-item-form-order>
-                <app-item-form-order [placeholder]="'price'" [span]="'price'"
-                    [formControlNameValue]="orderForm.controls['fuel'].get('price')"></app-item-form-order>
-                <app-item-form-order [placeholder]="'unit'" [span]="'unit'"
-                    [formControlNameValue]="orderForm.controls['fuel'].get('unit')"></app-item-form-order>
-                <app-item-form-order #description [placeholder]="'description'" [span]="'description'"
+                <app-item-form-order [placeholder]="'price'" [span]="'Cena'"
+                    [formControlNameValue]="orderForm.controls['fuel'].get('price')">
+                </app-item-form-order>
+                <app-item-form-order [placeholder]="'unit'" [span]="'Jednostka'"
+                    [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
+                </app-item-form-order>
+                <app-item-form-order #description [placeholder]="''" [span]="'Opisz dokładne parametry'"
                     [formControlNameValue]="orderForm.get('description')">
                 </app-item-form-order>
             </div>
@@ -22,27 +24,27 @@
             </nav>
         </ng-container>
 
-        <ng-container *ngIf=showOrderDetails>
+        <ng-container *ngIf=orderDetailsForm>
             <div class="step-two-form">
                 <div class="column">
                     <app-item-form-order [placeholder]="'email@email.com'" [span]="'Email'"
                         [formControlNameValue]="orderForm.get('email')">
                     </app-item-form-order>
-                    <app-item-form-order [placeholder]="'phoneNumber'" [span]="'phoneNumber'"
+                    <app-item-form-order [placeholder]="'123-456-789'" [span]="'Numer telefonu'"
                         [formControlNameValue]="orderForm.get('phoneNumber')">
                     </app-item-form-order>
-                    <app-item-form-order [placeholder]="'street'" [span]="'street'"
+                    <app-item-form-order [placeholder]="'Kwiatkowa'" [span]="'Ulica'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('street')">
                     </app-item-form-order>
                 </div>
                 <div class="column">
-                    <app-item-form-order [placeholder]="'city'" [span]="'city'"
+                    <app-item-form-order [placeholder]="'Warszawa'" [span]="'Miejscowość'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('city')">
                     </app-item-form-order>
-                    <app-item-form-order [placeholder]="'buildingNumber'" [span]="'buildingNumber'"
+                    <app-item-form-order [placeholder]="'123'" [span]="'Nr domu'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('buildingNumber')">
                     </app-item-form-order>
-                    <app-item-form-order [placeholder]="'postalCode'" [span]="'postalCode'"
+                    <app-item-form-order [placeholder]="'22-33'" [span]="'Kod pocztowy'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('postalCode')">
                     </app-item-form-order>
                 </div>

@@ -60,10 +60,10 @@ export class OrderFormComponent implements OnInit {
   }
 
   editor: EditorType = 'personalData';
-  get showPersonalData() {
+  get personalDataForm() {
     return this.editor === 'personalData';
   }
-  get showOrderDetails() {
+  get orderDetailsForm() {
     return this.editor === 'orderDetails';
   }
 
