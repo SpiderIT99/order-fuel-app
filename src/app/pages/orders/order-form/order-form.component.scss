@@ -1,3 +1,32 @@
+button{
+    width: 200px;
+    height: 50px;
+    background-color: #f2cb2c;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.container{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    // border: 1px gray solid;
+}
+.title{
+    margin-bottom: 80px;
+}
+.step-two-form{
+    display: flex;
+    justify-content: center;
+    column-gap: 80px;
+}
+.end-btns{
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+}
 .error-step-form{
+    height: 40px;
     color: red;
 }

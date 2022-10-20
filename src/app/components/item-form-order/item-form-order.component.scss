@@ -9,7 +9,7 @@
 }
 .input-text{
     font-size: 18px;
-    border: 1px grey solid;
+    border: 1px #dadbdc solid;
     border-radius: 5px;
     padding: 20px;
     width: 100%;
@@ -19,6 +19,7 @@
 }
 .error-holder{
     height: 40px;
+    padding-left: 20px;
     display: flex;
     align-items: center;
     color: red;

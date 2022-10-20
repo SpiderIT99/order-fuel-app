@@ -20,6 +20,7 @@ export class OrderFormComponent implements OnInit {
   @Input() src: string = '';
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
+  isErrorFullForm: boolean = false;
 
   constructor(private fb: FormBuilder) { }
 
@@ -68,6 +69,7 @@ export class OrderFormComponent implements OnInit {
 
   onSubmit() {
     validateAllFormFields(this.orderForm);
+    this.displayGeneralError();
     // console.log(this.orderForm.value);
   }
 
@@ -85,5 +87,9 @@ export class OrderFormComponent implements OnInit {
 
   toggleScreen(type: EditorType): void {
     this.editor = type;
+  }
+
+  displayGeneralError(): void {
+    this.orderForm.invalid ? this.isErrorFullForm = true : this.isErrorFullForm = false;
   }
 }
