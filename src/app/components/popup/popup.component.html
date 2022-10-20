@@ -1,8 +1,12 @@
 <div class="view-with-popup">
     <div class="popup">
-        <button type="button" class="exit-form" (click)="exitPopup()">x</button>
-        <ng-content>
-        </ng-content>
+        <div class="head-popup">
+            <button type="button" class="exit-form" (click)="exitPopup()">X</button>
+        </div>
+        <div class="content">
+            <ng-content>
+            </ng-content>
+        </div>
     </div>
     <div class="view-around-popup" (click)="exitPopup()"></div>
 </div>
