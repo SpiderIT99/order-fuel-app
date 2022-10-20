@@ -1,3 +1,21 @@
+.floating-label{
+    font-size: 13px;
+    line-height: 13px;
+    position: absolute;
+    background-color: white;
+    margin-top: -5px;
+    margin-left: 15px;
+    padding: 0 5px;
+}
+.input-text{
+    font-size: 18px;
+    border: 1px grey solid;
+    border-radius: 5px;
+    padding: 20px;
+}
+.input-text:focus{
+    outline: none;
+}
 .error-holder{
     color: red;
 }
