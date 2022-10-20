@@ -12,10 +12,14 @@
     border: 1px grey solid;
     border-radius: 5px;
     padding: 20px;
+    width: 100%;
 }
 .input-text:focus{
     outline: none;
 }
 .error-holder{
+    height: 40px;
+    display: flex;
+    align-items: center;
     color: red;
 }
