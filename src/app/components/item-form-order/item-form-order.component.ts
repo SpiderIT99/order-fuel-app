@@ -13,7 +13,7 @@ export class ItemFormOrderComponent implements OnInit {
   @Input() placeholder: string = "";
   @Input() span: string = "";
   @Input() formControlNameValue: FormControl = new FormControl();
-
+  @Input() heightInput: string = "60px";
   constructor() { }
 
   public error$: Subject<string> = new Subject();

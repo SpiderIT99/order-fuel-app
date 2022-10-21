@@ -3,17 +3,18 @@
         <h1 class="title">{{name}}</h1>
         <ng-container *ngIf=personalDataForm>
             <div class="step-one-form">
-                <app-item-form-order #count [placeholder]="'99'" [span]="'Ilość'"
+                <app-item-form-order class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"
                     [formControlNameValue]="orderForm.get('count')">
                 </app-item-form-order>
-                <app-item-form-order [placeholder]="'price'" [span]="'Cena'"
+                <app-item-form-order class="price-input" [placeholder]="''" [span]="'Cena'"
                     [formControlNameValue]="orderForm.controls['fuel'].get('price')">
                 </app-item-form-order>
-                <app-item-form-order [placeholder]="'unit'" [span]="'Jednostka'"
+                <app-item-form-order class="unit-input" [placeholder]="''" [span]="'Jednostka'"
                     [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
                 </app-item-form-order>
-                <app-item-form-order #description [placeholder]="''" [span]="'Opisz dokładne parametry'"
-                    [formControlNameValue]="orderForm.get('description')">
+                <app-item-form-order class="description-input" #description [placeholder]="''"
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')"
+                    [heightInput]="'120px'">
                 </app-item-form-order>
             </div>
             <div class="error-step-form">
