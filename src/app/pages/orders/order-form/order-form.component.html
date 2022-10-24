@@ -1,4 +1,4 @@
-<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+<form (ngSubmit)="onSubmit()">
     <div class="container">
         <h1 class="title">{{name}}</h1>
         <ng-container *ngIf=personalDataForm>
@@ -45,7 +45,7 @@
                     <app-item-form-order [placeholder]="'123'" [span]="'Nr domu'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('buildingNumber')">
                     </app-item-form-order>
-                    <app-item-form-order [placeholder]="'22-33'" [span]="'Kod pocztowy'"
+                    <app-item-form-order [placeholder]="'22-333'" [span]="'Kod pocztowy'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('postalCode')">
                     </app-item-form-order>
                 </div>

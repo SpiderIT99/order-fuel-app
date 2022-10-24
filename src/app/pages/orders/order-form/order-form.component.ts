@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { validateAllFormFields, validateSingleFormField } from './oredr-form-validators';
+import { validateAllFormFields, validateSingleFormField, validatorEmail, validatorPhone, validatorOnlyNumbers, validatorPostalCode, validatorBuildingNumber } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
 
 export type EditorType = 'personalData' | 'orderDetails';
@@ -36,15 +36,14 @@ export class OrderFormComponent implements OnInit {
       src: [null],
     }),
     description: [null, Validators.maxLength(200)],
-    phoneNumber: [null, Validators.required],
-    // email: [null, [Validators.required, email]],
-    email: [null, Validators.required],
-    count: [null, Validators.required],
+    phoneNumber: [null, [Validators.required, validatorPhone]],
+    email: [null, [Validators.required, validatorEmail]],
+    count: [null, [Validators.required, validatorOnlyNumbers, Validators.min(1), Validators.max(99)]],
     addressDelivery: this.fb.group({
       city: [null, Validators.required],
-      postalCode: [null, Validators.required],
+      postalCode: [null, [Validators.required, validatorPostalCode]],
       street: [null, Validators.required],
-      buildingNumber: [null, Validators.required],
+      buildingNumber: [null, [Validators.required, validatorBuildingNumber]],
     })
   })
 
