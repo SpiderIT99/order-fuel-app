@@ -14,6 +14,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ItemFormOrderComponent } from './components/item-form-order/item-form-order.component';
 import { PopupComponent } from './components/popup/popup.component';
 import { ItemInputFormComponent } from './components/item-input-form/item-input-form.component';
+import { ItemTextareaFormComponent } from './components/item-textarea-form/item-textarea-form.component';
 
 
 @NgModule({
@@ -29,6 +30,7 @@ import { ItemInputFormComponent } from './components/item-input-form/item-input-
     ItemFormOrderComponent,
     PopupComponent,
     ItemInputFormComponent,
+    ItemTextareaFormComponent,
   ],
   imports: [
     BrowserModule,

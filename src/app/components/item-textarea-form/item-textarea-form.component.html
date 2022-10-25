@@ -1,0 +1,6 @@
+<app-item-form-order [span]="span" [formControlNameValue]="formControlNameValue">
+    <textarea class="textarea-input" placeholder="{{placeholder}}" [formControl]="formControlNameValue"
+        maxlength="{{maxlength}}" rows="{{rows}}" (keydown.enter)="($event.preventDefault())"
+        (keyup)="characterCounter($event)"></textarea>
+    <div class="character-counter">{{textLength}}/{{maxlength}}</div>
+</app-item-form-order>

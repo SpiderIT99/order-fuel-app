@@ -35,7 +35,7 @@ export class OrderFormComponent implements OnInit {
       unit: [{ value: null, disabled: true }],
       src: [null],
     }),
-    description: [null, Validators.maxLength(200)],
+    description: [null],
     phoneNumber: [null, [Validators.required, validatorPhone]],
     email: [null, [Validators.required, validatorEmail]],
     count: [null, [Validators.required, validatorOnlyNumbers, Validators.min(1), Validators.max(99)]],

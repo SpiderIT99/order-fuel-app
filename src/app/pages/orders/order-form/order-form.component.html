@@ -12,9 +12,10 @@
                 <app-item-input-form class="unit-input" [placeholder]="''" [span]="'Jednostka'"
                     [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
                 </app-item-input-form>
-                <app-item-input-form class="description-input" #description [placeholder]="''"
-                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')">
-                </app-item-input-form>
+                <app-item-textarea-form class="description-input" #description [placeholder]="''"
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')"
+                    [rows]="4" [maxlength]="250">
+                </app-item-textarea-form>
             </div>
             <div class="error-step-form">
                 <div *ngIf="isErrorStepOne">{{errorStepForm}}</div>
