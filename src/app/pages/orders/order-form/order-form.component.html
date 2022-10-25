@@ -3,19 +3,18 @@
         <h1 class="title">{{name}}</h1>
         <ng-container *ngIf=personalDataForm>
             <div class="step-one-form">
-                <app-item-form-order class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"
+                <app-item-input-form class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"
                     [formControlNameValue]="orderForm.get('count')">
-                </app-item-form-order>
-                <app-item-form-order class="price-input" [placeholder]="''" [span]="'Cena'"
+                </app-item-input-form>
+                <app-item-input-form class="price-input" [placeholder]="''" [span]="'Cena'"
                     [formControlNameValue]="orderForm.controls['fuel'].get('price')">
-                </app-item-form-order>
-                <app-item-form-order class="unit-input" [placeholder]="''" [span]="'Jednostka'"
+                </app-item-input-form>
+                <app-item-input-form class="unit-input" [placeholder]="''" [span]="'Jednostka'"
                     [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
-                </app-item-form-order>
-                <app-item-form-order class="description-input" #description [placeholder]="''"
-                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')"
-                    [heightInput]="'120px'">
-                </app-item-form-order>
+                </app-item-input-form>
+                <app-item-input-form class="description-input" #description [placeholder]="''"
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')">
+                </app-item-input-form>
             </div>
             <div class="error-step-form">
                 <div *ngIf="isErrorStepOne">{{errorStepForm}}</div>
@@ -28,26 +27,26 @@
         <ng-container *ngIf=orderDetailsForm>
             <div class="step-two-form">
                 <div class="column">
-                    <app-item-form-order [placeholder]="'email@email.com'" [span]="'Email'"
+                    <app-item-input-form [placeholder]="'email@email.com'" [span]="'Email'"
                         [formControlNameValue]="orderForm.get('email')">
-                    </app-item-form-order>
-                    <app-item-form-order [placeholder]="'123-456-789'" [span]="'Numer telefonu'"
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'123-456-789'" [span]="'Numer telefonu'"
                         [formControlNameValue]="orderForm.get('phoneNumber')">
-                    </app-item-form-order>
-                    <app-item-form-order [placeholder]="'Kwiatkowa'" [span]="'Ulica'"
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'Kwiatkowa'" [span]="'Ulica'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('street')">
-                    </app-item-form-order>
+                    </app-item-input-form>
                 </div>
                 <div class="column">
-                    <app-item-form-order [placeholder]="'Warszawa'" [span]="'Miejscowość'"
+                    <app-item-input-form [placeholder]="'Warszawa'" [span]="'Miejscowość'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('city')">
-                    </app-item-form-order>
-                    <app-item-form-order [placeholder]="'123'" [span]="'Nr domu'"
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'123'" [span]="'Nr domu'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('buildingNumber')">
-                    </app-item-form-order>
-                    <app-item-form-order [placeholder]="'22-333'" [span]="'Kod pocztowy'"
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'22-333'" [span]="'Kod pocztowy'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('postalCode')">
-                    </app-item-form-order>
+                    </app-item-input-form>
                 </div>
             </div>
             <div class="error-step-form">
