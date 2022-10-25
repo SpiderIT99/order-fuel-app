@@ -3,7 +3,6 @@ import { FormControl } from '@angular/forms';
 import { getValidationMessage } from '../../pages/orders/order-form/oredr-form-validators';
 import { Subject, Subscription } from 'rxjs';
 
-
 @Component({
   selector: 'app-item-form-order',
   templateUrl: './item-form-order.component.html',
@@ -13,8 +12,6 @@ export class ItemFormOrderComponent implements OnInit {
   @Input() placeholder: string = "";
   @Input() span: string = "";
   @Input() formControlNameValue: FormControl = new FormControl();
-  @Input() heightInput: string = "60px";
-  constructor() { }
 
   public error$: Subject<string> = new Subject();
   private subscription$: Subscription = new Subscription();
@@ -44,5 +41,4 @@ export class ItemFormOrderComponent implements OnInit {
       }
     }
   }
-
 }
