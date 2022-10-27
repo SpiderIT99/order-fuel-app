@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { getValidationMessage } from '../../pages/orders/order-form/oredr-form-validators';
+import { getValidationMessage } from '../order-form/oredr-form-validators';
 import { Subject, Subscription } from 'rxjs';
 
 @Component({
