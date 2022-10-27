@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from "../../_core/services/order.service";
+import { Fuel } from "../../_core/models/fuel.model";
 
 @Component({
   selector: 'app-order',
@@ -7,17 +8,14 @@ import { OrderService } from "../../_core/services/order.service";
   styleUrls: ['./orders.component.scss']
 })
 export class OrdersComponent implements OnInit {
-  public orderBlockData: any[] = [];
+  public orderBlockData: Fuel[] = [];
+  dataToForm: Fuel = new Fuel;
   activeForm = false;
-  nameToForm: string = "";
-  srcToForm: string = "";
-  priceToForm: string = "";
-  unitToForm: string = "";
 
   constructor(private orderService: OrderService) { }
 
   private getFuel(): void {
-    this.orderService.getFuel().subscribe(response => {
+    this.orderService.getFuel().subscribe((response: Fuel[]) => {
       this.orderBlockData = response;
     })
   }
@@ -26,15 +24,12 @@ export class OrdersComponent implements OnInit {
     this.getFuel();
   }
 
-  activateForm(name: string, src: string, price: string, unit: string): void {
-    this.nameToForm = name;
-    this.srcToForm = src;
-    this.priceToForm = price;
-    this.unitToForm = unit;
+  activateForm(data: Fuel): void {
+    this.dataToForm = data;
     this.activeForm = true;
   }
 
-  exitForm(): void{
+  exitForm(): void {
     this.activeForm = false;
   }
 }

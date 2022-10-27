@@ -1,6 +1,6 @@
 <form (ngSubmit)="onSubmit()">
     <div class="container">
-        <h1 class="title">{{name}}</h1>
+        <h1 class="title">{{data.name}}</h1>
         <ng-container *ngIf=personalDataForm>
             <div class="step-one-form">
                 <app-item-input-form class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"

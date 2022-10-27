@@ -1,7 +1,8 @@
-import { Component, OnInit, ViewChild, Input } from '@angular/core';
+import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateAllFormFields, validateSingleFormField, validatorEmail, validatorPhone, validatorOnlyNumbers, validatorPostalCode, validatorBuildingNumber } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
+import { Fuel } from 'src/app/_core/models/fuel.model';
 
 export type EditorType = 'personalData' | 'orderDetails';
 
@@ -12,12 +13,9 @@ export type EditorType = 'personalData' | 'orderDetails';
 })
 
 export class OrderFormComponent implements OnInit {
+  @Input() data: Fuel;
   @ViewChild('count') fieldCount: ItemFormOrderComponent;
   @ViewChild('description') fielDescription: ItemFormOrderComponent;
-  @Input() name: string = '';
-  @Input() price: string = '';
-  @Input() unit: string = '';
-  @Input() src: string = '';
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
   isErrorFullForm: boolean = false;
@@ -50,10 +48,10 @@ export class OrderFormComponent implements OnInit {
   updateData(): void {
     this.orderForm.patchValue({
       fuel: {
-        name: this.name,
-        price: this.price,
-        unit: this.unit,
-        src: this.src
+        name: this.data.name,
+        price: this.data.price,
+        unit: this.data.unit,
+        src: this.data.src
       }
     });
   }
@@ -69,7 +67,7 @@ export class OrderFormComponent implements OnInit {
   onSubmit() {
     validateAllFormFields(this.orderForm);
     this.displayGeneralError();
-    // console.log(this.orderForm.value);
+    // console.log(this.orderForm.getRawValue());
   }
 
   checkStepOne(): void {

@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Fuel } from 'src/app/_core/models/fuel.model';
 
 @Component({
   selector: 'app-order-block',
@@ -6,16 +7,11 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./order-block.component.scss']
 })
 export class OrderBlockComponent implements OnInit {
-  @Input() name: string = '';
-  @Input() src: string = '';
-  @Input() price: string = '';
-  @Input() unit: string = '';
-  alt = this.src;
-  fullSrc='';
-  constructor() { }
+  @Input() data: Fuel = new Fuel;
+  alt: string = this.data.src;
+  fullSrc: string='';
 
   ngOnInit(): void {
-  this.fullSrc=('../../../assets/img/'+ this.src + '.png');
+  this.fullSrc=('../../../assets/img/'+ this.data.src + '.png');
   }
-
 }
