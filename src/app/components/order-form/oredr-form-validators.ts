@@ -1,4 +1,5 @@
 import { FormGroup, FormArray, FormControl, AbstractControl } from '@angular/forms';
+import { IMessage } from 'src/app/_core/interfaces/imessage.interface';
 
 export function validateAllFormFields(formGroup: FormGroup | FormArray) {
     Object.keys(formGroup.controls).forEach(field => {
@@ -101,19 +102,6 @@ export function validatorBuildingNumber(AC: AbstractControl) {
 //     }
 //     return !regex.test(AC.value) ? { 'buildingNumber': true } : null;
 // }
-
-export interface IMessage {
-    required: string;
-    email: string;
-    minlength: string;
-    maxlength: string,
-    min: string,
-    max: string,
-    phone: string,
-    onlyNumbers: string,
-    postalCode: string,
-    buildingNumber: string
-}
 
 export function getValidationMessage(validator: string,
     validatorValue?: any): string {
