@@ -9,7 +9,6 @@ import { Subject, Subscription } from 'rxjs';
   styleUrls: ['./item-form-order.component.scss']
 })
 export class ItemFormOrderComponent implements OnInit {
-  @Input() placeholder: string = "";
   @Input() span: string = "";
   @Input() formControlNameValue: FormControl = new FormControl();
 
