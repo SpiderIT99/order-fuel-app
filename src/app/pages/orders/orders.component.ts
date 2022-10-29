@@ -14,14 +14,16 @@ export class OrdersComponent implements OnInit {
 
   constructor(private orderService: OrderService) { }
 
+  ngOnInit(): void {
+    this.getFuel();
+  }
+
   private getFuel(): void {
     this.orderService.getFuel().subscribe((response: Fuel[]) => {
       this.orderBlockData = response;
+    }, error => {
+      console.error("error: ", error);
     })
-  }
-
-  ngOnInit(): void {
-    this.getFuel();
   }
 
   activateForm(data: Fuel): void {

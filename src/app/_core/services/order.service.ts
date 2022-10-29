@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { ApiService } from "./api.service";
+import { IOrderDTO } from '../interfaces/iorder-dto.interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,6 @@ export class OrderService {
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
-
   public getFuel() {
     return this.apiService.get(`${this.url}fuel`);
   }
@@ -22,11 +22,7 @@ export class OrderService {
     return this.apiService.get(`${this.url}order`);
   }
 
-  public saveOrder(order: any) {
-    return this.http
-      .post(`${this.url}order`, { order: order })
-      .pipe(catchError(response =>
-        throwError(response.error)
-      ));
+  public saveOrder(order: IOrderDTO) {
+    return this.http.post(`${this.url}order`, { order: order });
   }
 }

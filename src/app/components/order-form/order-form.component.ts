@@ -3,6 +3,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 import { validateAllFormFields, validateSingleFormField, validatorEmail, validatorPhone, validatorOnlyNumbers, validatorPostalCode, validatorBuildingNumber } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
 import { Fuel } from 'src/app/_core/models/fuel.model';
+import { OrderService } from "../../_core/services/order.service";
+import { IOrderDTO } from 'src/app/_core/interfaces/iorder-dto.interface';
 
 export type EditorType = 'personalData' | 'orderDetails';
 
@@ -19,8 +21,9 @@ export class OrderFormComponent implements OnInit {
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
   isErrorFullForm: boolean = false;
+  orderData: IOrderDTO;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private orderService: OrderService) { }
 
   ngOnInit(): void {
     this.updateData();
@@ -33,7 +36,7 @@ export class OrderFormComponent implements OnInit {
       unit: [{ value: null, disabled: true }],
       src: [null],
     }),
-    description: [null],
+    description: [null, Validators.required],
     phoneNumber: [null, [Validators.required, validatorPhone]],
     email: [null, [Validators.required, validatorEmail]],
     count: [null, [Validators.required, validatorOnlyNumbers, Validators.min(1), Validators.max(99)]],
@@ -64,12 +67,6 @@ export class OrderFormComponent implements OnInit {
     return this.editor === 'orderDetails';
   }
 
-  onSubmit() {
-    validateAllFormFields(this.orderForm);
-    this.displayGeneralError();
-    // console.log(this.orderForm.getRawValue());
-  }
-
   checkStepOne(): void {
     if (this.orderForm.get('count')?.errors || this.orderForm.get('description')?.errors) {
       this.isErrorStepOne = true;
@@ -86,7 +83,20 @@ export class OrderFormComponent implements OnInit {
     this.editor = type;
   }
 
-  displayGeneralError(): void {
-    this.orderForm.invalid ? this.isErrorFullForm = true : this.isErrorFullForm = false;
+  public submitOrder(): void {
+    if (!this.orderForm.valid) {
+      validateAllFormFields(this.orderForm);
+      this.isErrorFullForm = true;
+      return;
+    }
+    this.isErrorFullForm = false;
+    this.orderData = this.orderForm.getRawValue();
+    this.saveOrder(this.orderData);
+  }
+
+  private saveOrder(submitedData: IOrderDTO): void {
+    this.orderService.saveOrder(submitedData).subscribe(error => {
+      console.error("error: ", error);
+    });
   }
 }

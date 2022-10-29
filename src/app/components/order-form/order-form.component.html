@@ -1,4 +1,4 @@
-<form (ngSubmit)="onSubmit()">
+<form (ngSubmit)="submitOrder()">
     <div class="container">
         <h1 class="title">{{data.name}}</h1>
         <ng-container *ngIf=personalDataForm>
@@ -13,7 +13,7 @@
                     [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
                 </app-item-input-form>
                 <app-item-textarea-form class="description-input" #description [placeholder]="''"
-                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')"
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')" 
                     [rows]="4" [maxlength]="250">
                 </app-item-textarea-form>
             </div>
