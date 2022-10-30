@@ -8,3 +8,17 @@
     column-gap: 25px;
     row-gap: 25px;
 }
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+}
+.popup{
+    position: absolute;
+    z-index: 1;
+}
+.toast{
+    margin: 25px 50px;
+    z-index: 2;
+    align-self: end;
+}

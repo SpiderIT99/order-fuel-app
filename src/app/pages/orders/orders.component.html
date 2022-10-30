@@ -5,8 +5,10 @@
             </app-order-block>
         </div>
     </div>
-    <app-popup *ngIf="activeForm" (disablePopup)="exitForm()">
-        <app-order-form [data]="dataToForm">
+    <app-popup class="popup" *ngIf="activeForm" (disablePopup)="exitForm()">
+        <app-order-form [data]="dataToForm" (showSubmissionNotification)="showToast($event)">
         </app-order-form>
     </app-popup>
+    <app-toast class="toast" *ngIf="showNotification" [errorSubmitedForm]="errorSubmitedForm">
+    </app-toast>
 </div>

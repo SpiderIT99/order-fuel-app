@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
+import { Component, OnInit, Input, ViewChild, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { validateAllFormFields, validateSingleFormField, validatorEmail, validatorPhone, validatorOnlyNumbers, validatorPostalCode, validatorBuildingNumber } from './oredr-form-validators';
 import { ItemFormOrderComponent } from 'src/app/components/item-form-order/item-form-order.component';
@@ -16,11 +16,13 @@ export type EditorType = 'personalData' | 'orderDetails';
 
 export class OrderFormComponent implements OnInit {
   @Input() data: Fuel;
+  @Output() showSubmissionNotification = new EventEmitter<boolean>();
   @ViewChild('count') fieldCount: ItemFormOrderComponent;
   @ViewChild('description') fielDescription: ItemFormOrderComponent;
   errorStepForm: string = "Wszystkie pola wymagane muszą być poprawnie uzupełnione";
   isErrorStepOne: boolean = false;
   isErrorFullForm: boolean = false;
+  errorSubmitedForm: boolean = false;
   orderData: IOrderDTO;
 
   constructor(private fb: FormBuilder, private orderService: OrderService) { }
@@ -92,11 +94,13 @@ export class OrderFormComponent implements OnInit {
     this.isErrorFullForm = false;
     this.orderData = this.orderForm.getRawValue();
     this.saveOrder(this.orderData);
+    this.showSubmissionNotification.emit(this.errorSubmitedForm);
   }
 
   private saveOrder(submitedData: IOrderDTO): void {
     this.orderService.saveOrder(submitedData).subscribe(error => {
       console.error("error: ", error);
-    });
+      this.errorSubmitedForm = true;
+    })
   }
 }

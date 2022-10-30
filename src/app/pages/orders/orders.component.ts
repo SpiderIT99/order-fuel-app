@@ -10,7 +10,9 @@ import { Fuel } from "../../_core/models/fuel.model";
 export class OrdersComponent implements OnInit {
   public orderBlockData: Fuel[] = [];
   dataToForm: Fuel = new Fuel;
-  activeForm = false;
+  activeForm: boolean = false;
+  showNotification:boolean = false;
+  errorSubmitedForm: boolean;
 
   constructor(private orderService: OrderService) { }
 
@@ -33,5 +35,16 @@ export class OrdersComponent implements OnInit {
 
   exitForm(): void {
     this.activeForm = false;
+  }
+
+  showToast(errorSubmitedForm: boolean): void {
+    errorSubmitedForm? undefined : this.exitForm(); //if there is an error when submitting the form then stay on the form
+    this.errorSubmitedForm = errorSubmitedForm; //value determines notification  (success or failure)
+    this.showNotification = true;
+    this.disableToast(3000);
+  }
+
+  disableToast(durationNotification: number): void {
+    setTimeout( () => {this.showNotification = false}, durationNotification);
   }
 }
