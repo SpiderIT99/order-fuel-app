@@ -89,9 +89,12 @@ export class OrderFormComponent implements OnInit {
     if (!this.orderForm.valid) {
       validateAllFormFields(this.orderForm);
       this.isErrorFullForm = true;
+      this.errorSubmitedForm = true;
+      this.showSubmissionNotification.emit(this.errorSubmitedForm);
       return;
     }
     this.isErrorFullForm = false;
+    this.errorSubmitedForm = false;
     this.orderData = this.orderForm.getRawValue();
     this.saveOrder(this.orderData);
     this.showSubmissionNotification.emit(this.errorSubmitedForm);
