@@ -12,6 +12,7 @@ a{
     transition: all 3s ease 0s;
     padding: 0 20px;
     text-decoration: none;
+    cursor: pointer;
 }
 a:hover{
     color: #5a1a77;
@@ -31,4 +32,5 @@ a:hover{
 }
 .logo img{
     height: 50px;
+    cursor: default;
 }
