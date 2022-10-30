@@ -1,0 +1,37 @@
+.view-with-popup{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;    
+    justify-content: center;
+}
+.popup{
+    background-color: white;
+    border-radius: 10px;
+    z-index: 2;
+    padding: 20px;
+}
+.view-around-popup{
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    z-index: 1;
+    background-color: black;
+    opacity: 0.5;
+}
+.head-popup{
+    display: flex;
+    justify-content: right;
+}
+.exit-form{
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    border: 2px black solid;
+    background-color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+.content{
+    padding: 30px 60px 60px 60px;
+}

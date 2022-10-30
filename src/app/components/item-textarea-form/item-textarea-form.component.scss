@@ -1,0 +1,17 @@
+.textarea-input{
+    font-size: 18px;
+    border: 1px #dadbdc solid;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    overflow: hidden;
+    resize: none;
+}
+.textarea-input:focus{
+    outline: none;
+}
+.character-counter{
+    font-size: 10px;
+    display: flex;
+    padding: 3px 0 0 20px;
+}

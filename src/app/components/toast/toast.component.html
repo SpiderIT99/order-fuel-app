@@ -1,0 +1,10 @@
+<div class="popup-notification" [ngStyle]="{'background-color': errorSubmitedForm ? '#fc0300' : '#009600' }">
+    <div *ngIf="errorSubmitedForm; else success">
+        <h3>Błąd</h3>
+        <p>Zamówienie nie zostało dodane</p>
+    </div>
+    <ng-template #success>
+        <h3>Sukces</h3>
+        <p>Zamówienie zostało pomyślnie dodane</p>
+    </ng-template>
+</div>

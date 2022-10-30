@@ -1,0 +1,62 @@
+<form (ngSubmit)="submitOrder()">
+    <div class="container">
+        <h1 class="title">{{data.name}}</h1>
+        <ng-container *ngIf=personalDataForm>
+            <div class="step-one-form">
+                <app-item-input-form class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"
+                    [formControlNameValue]="orderForm.get('count')">
+                </app-item-input-form>
+                <app-item-input-form class="price-input" [placeholder]="''" [span]="'Cena'"
+                    [formControlNameValue]="orderForm.controls['fuel'].get('price')">
+                </app-item-input-form>
+                <app-item-input-form class="unit-input" [placeholder]="''" [span]="'Jednostka'"
+                    [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
+                </app-item-input-form>
+                <app-item-textarea-form class="description-input" #description [placeholder]="''"
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')" 
+                    [rows]="4" [maxlength]="250">
+                </app-item-textarea-form>
+            </div>
+            <div class="error-step-form">
+                <div *ngIf="isErrorStepOne">{{errorStepForm}}</div>
+            </div>
+            <nav>
+                <button type="button" (click)="checkStepOne()">Dalej</button>
+            </nav>
+        </ng-container>
+
+        <ng-container *ngIf=orderDetailsForm>
+            <div class="step-two-form">
+                <div class="column">
+                    <app-item-input-form [placeholder]="'email@email.com'" [span]="'Email'"
+                        [formControlNameValue]="orderForm.get('email')">
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'123-456-789'" [span]="'Numer telefonu'"
+                        [formControlNameValue]="orderForm.get('phoneNumber')">
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'Kwiatkowa'" [span]="'Ulica'"
+                        [formControlNameValue]="orderForm.controls['addressDelivery'].get('street')">
+                    </app-item-input-form>
+                </div>
+                <div class="column">
+                    <app-item-input-form [placeholder]="'Warszawa'" [span]="'Miejscowość'"
+                        [formControlNameValue]="orderForm.controls['addressDelivery'].get('city')">
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'123'" [span]="'Nr domu'"
+                        [formControlNameValue]="orderForm.controls['addressDelivery'].get('buildingNumber')">
+                    </app-item-input-form>
+                    <app-item-input-form [placeholder]="'22-333'" [span]="'Kod pocztowy'"
+                        [formControlNameValue]="orderForm.controls['addressDelivery'].get('postalCode')">
+                    </app-item-input-form>
+                </div>
+            </div>
+            <div class="error-step-form">
+                <div *ngIf="isErrorFullForm">{{errorStepForm}}</div>
+            </div>
+            <nav class="end-btns">
+                <button type="button" (click)="toggleScreen('personalData')">Poprzedni krok</button>
+                <button type="submit">Zatwierdź</button>
+            </nav>
+        </ng-container>
+    </div>
+</form>

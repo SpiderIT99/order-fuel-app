@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="shopping-options-container">
+        <div *ngFor="let item of orderBlockData;">
+            <app-order-block [data]="item" (click)="activateForm(item)">
+            </app-order-block>
+        </div>
+    </div>
+    <app-popup class="popup" *ngIf="activeForm" (disablePopup)="exitForm()">
+        <app-order-form [data]="dataToForm" (showSubmissionNotification)="showToast($event)">
+        </app-order-form>
+    </app-popup>
+    <app-toast class="toast" *ngIf="showNotification" [errorSubmitedForm]="errorSubmitedForm">
+    </app-toast>
+</div>

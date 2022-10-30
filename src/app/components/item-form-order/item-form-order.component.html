@@ -1,0 +1,11 @@
+<div class="input">
+    <div class="input-with-label">
+        <span class="floating-label">{{span}}</span>
+        <ng-content>
+            <!-- input / textarea -->
+        </ng-content>
+    </div>
+    <div class="error-holder">
+        <span *ngIf="(error$ | async) as error">{{ error }}</span>
+    </div>
+</div>

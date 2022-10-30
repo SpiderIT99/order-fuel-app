@@ -1,0 +1,13 @@
+.container{
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    height: 130px;
+    background-color: #efc22b;
+    border-radius: 5px;
+}
+img{
+    margin: 10px 0;
+    width: 25%;
+}

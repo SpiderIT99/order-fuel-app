@@ -1,0 +1,47 @@
+button{
+    width: 200px;
+    height: 50px;
+    background-color: #f2cb2c;
+    border-radius: 5px;
+    font-weight: bold;
+}
+.container{
+    width: 60vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+.title{
+    margin-bottom: 80px;
+}
+.step-one-form{
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+}
+.count-input{
+    grid-column: 1/8;
+}
+.price-input{
+    grid-column: 9/12;
+}
+.unit-input{
+    grid-column: 13/-1;
+}
+.description-input{
+    grid-column: 1/-1;
+}
+.step-two-form{
+    display: flex;
+    justify-content: center;
+    column-gap: 80px;
+}
+.end-btns{
+    display: flex;
+    justify-content: center;
+    column-gap: 40px;
+}
+.error-step-form{
+    height: 40px;
+    color: red;
+}
