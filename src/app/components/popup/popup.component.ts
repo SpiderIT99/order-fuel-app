@@ -7,13 +7,9 @@ import { HostListener } from '@angular/core';
   styleUrls: ['./popup.component.scss']
 })
 export class PopupComponent {
-  @Output() disablePopup = new EventEmitter<string>();
+  @Output() disablePopup = new EventEmitter<null>();
   @HostListener('window:keyup.escape')
   keyEvent(): void {
-    this.disablePopup.emit();
-  }
-
-  exitPopup(): void {
     this.disablePopup.emit();
   }
 }
