@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { OrderListComponent } from './pages/order-list/order-list.component';
 import { OrdersComponent } from './pages/orders/orders.component';
-import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { OrderBlockComponent } from './components/order-block/order-block.component';
 import { OrderFormComponent } from './components/order-form/order-form.component';
@@ -24,7 +23,6 @@ import { ToastComponent } from './components/toast/toast.component';
     HomePageComponent,
     OrderListComponent,
     OrdersComponent,
-    PageNotFoundComponent,
     NavigationComponent,
     OrderBlockComponent,
     OrderFormComponent,

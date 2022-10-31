@@ -27,7 +27,7 @@
 
         <ng-container *ngIf=orderDetailsForm>
             <div class="step-two-form">
-                <div class="column">
+                <div>
                     <app-item-input-form [placeholder]="'email@email.com'" [span]="'Email'"
                         [formControlNameValue]="orderForm.get('email')">
                     </app-item-input-form>
@@ -38,7 +38,7 @@
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('street')">
                     </app-item-input-form>
                 </div>
-                <div class="column">
+                <div>
                     <app-item-input-form [placeholder]="'Warszawa'" [span]="'Miejscowość'"
                         [formControlNameValue]="orderForm.controls['addressDelivery'].get('city')">
                     </app-item-input-form>
