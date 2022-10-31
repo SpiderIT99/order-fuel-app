@@ -1,38 +1,51 @@
+$custom-pink: #d05484;
+
 .main-section{
-    height: 83vh;
+    height: 95vh;
     display: flex;
     align-items: center;
     justify-content: center;
 }
+.about-application{
+    text-align: left;
+    padding: 120px;
+}
 .display{
     width: 50vw;
 }
-.application-screen img{
-    height: 300px;
-}
-.about-application{
-    text-align: left;
-    padding: 0 20px 0 100px;
-}
-.about-application h2{
-    margin: 5px 0 25px 0;
-}
 .square{
-    background-color: #d05484;
-    width: 100px;
-    height: 10px;
+    background-color: $custom-pink;
+    width: 200px;
+    height: 20px;
     border-radius: 1px;
 }
+h2{
+    margin: 5px 0 40px 0;
+    line-height: 32px;
+}
+p{
+    line-height: 24px;
+}
+.application-screen{
+    display: flex;
+    height: 100%;
+}
+img{
+    height: 94%;
+    padding-bottom: 15px;
+    align-self: flex-end;
+    justify-self: end;
+}
 footer{
-    height: 7vh;
-    background-color: #d05484;
+    height: 5vh;
+    background-color: $custom-pink;;
     display: flex;
     align-items:flex-end;
     justify-content:space-around;
 }
 .bottom-square{
     background-color: #f8e59a;
-    height: 10px;
-    width: 100px;
-    border-radius: 5px 5px 0 0;
+    height: 33%;
+    width: 10%;
+    border-radius: 10px 10px 0 0;
 }
