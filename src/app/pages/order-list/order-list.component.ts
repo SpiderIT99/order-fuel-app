@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { OrderList } from 'src/app/_core/models/order-list.model';
 import { OrderService } from 'src/app/_core/services/order.service';
 
 @Component({
@@ -7,7 +8,8 @@ import { OrderService } from 'src/app/_core/services/order.service';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit{
-  public orderListData: any[] = [];
+  public orderListData: OrderList[] = [];
+
 
   constructor(private orderService: OrderService) { }
 
@@ -16,9 +18,8 @@ export class OrderListComponent implements OnInit{
   }
 
   private getOrder(): void {
-    this.orderService.getOrder().subscribe( (response) => {
+    this.orderService.getOrder().subscribe( (response: OrderList[]) => {
       this.orderListData = response;
-      console.log(response)
     }, error => {
       console.error("error: ", error);
     })
