@@ -1,9 +1,12 @@
 .active {
     text-decoration: underline;
     text-decoration-color: #5a1a77;
-    text-underline-offset: 10px;
+    text-underline-offset: 20px;
 }
-h1{
+.navigation{
+    display: flex;
+}
+h2{
     color: #545454;
     font-weight: 400;
 }
@@ -20,17 +23,17 @@ a:hover{
 }
 .container{
     width: 100vw;
-    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 20px 20px;
 }
 .logo{
     display: flex;
     align-items: center;
-    cursor: pointer;
 }
 img{
-    height: 50px;
+    height: 70px;
+    margin-right: 10px;
     cursor: default;
 }
