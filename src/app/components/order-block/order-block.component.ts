@@ -10,7 +10,7 @@ export class OrderBlockComponent implements OnInit {
   @Input() data: Fuel = new Fuel;
   alt: string = this.data.src;
   fullSrc: string='';
-  priceUnit: string='zł';
+  priceUnit: string='ZŁ';
 
   ngOnInit(): void {
   this.fullSrc=('../../../assets/img/'+ this.data.src + '.png');

@@ -1,14 +1,14 @@
 .container{
+    padding: 20px;
     display: flex;
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    height: 130px;
     background-color: #efc22b;
     border-radius: 5px;
     cursor: pointer;
 }
 img{
-    margin: 10px 0;
+    margin: 20px 0;
     width: 25%;
 }
