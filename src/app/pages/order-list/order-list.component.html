@@ -1,1 +1,11 @@
-<p>order-list works!</p>
+<div class="container">
+    <div class="order-list">
+        <div *ngFor="let item of orderListData;">
+            <app-order-list-block [data]="item" (click)="activateOrderPreview(item)">
+            </app-order-list-block>
+        </div>
+    </div>
+    <app-popup class="popup" *ngIf="activeView" (disablePopup)="exitOrderPreview()">
+        
+    </app-popup>
+</div>

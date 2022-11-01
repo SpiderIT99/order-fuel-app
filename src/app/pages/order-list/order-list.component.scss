@@ -1,0 +1,17 @@
+.container{
+    display: flex;
+    justify-content:center;
+    width: 100vw;
+}
+.order-list{
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 35px;
+    row-gap: 35px;
+    margin-bottom: 35px;
+}
+.popup{
+    position: absolute;
+    z-index: 1;
+}

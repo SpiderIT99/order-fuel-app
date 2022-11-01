@@ -9,8 +9,9 @@ import { OrderService } from 'src/app/_core/services/order.service';
 })
 export class OrderListComponent implements OnInit{
   public orderListData: OrderList[] = [];
-
-
+  dataToView: OrderList = new OrderList;
+  activeView: boolean = false;
+  
   constructor(private orderService: OrderService) { }
 
   ngOnInit(): void {
@@ -23,5 +24,14 @@ export class OrderListComponent implements OnInit{
     }, error => {
       console.error("error: ", error);
     })
+  }
+
+  activateOrderPreview(data: OrderList): void {
+    this.dataToView = data;
+    this.activeView = true;
+  }
+  
+  exitOrderPreview(): void {
+    this.activeView = false;
   }
 }
