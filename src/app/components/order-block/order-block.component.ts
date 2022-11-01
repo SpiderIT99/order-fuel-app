@@ -8,7 +8,6 @@ import { Fuel } from 'src/app/_core/models/fuel.model';
 })
 export class OrderBlockComponent implements OnInit {
   @Input() data: Fuel = new Fuel;
-  alt: string = this.data.src;
   fullSrc: string='';
   priceUnit: string='ZŁ';
 
