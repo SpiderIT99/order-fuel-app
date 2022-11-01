@@ -1,5 +1,4 @@
 .shopping-options-container{
-    position: absolute;
     width: 100vw;
     margin-top: 20vh;
     display: grid;
@@ -7,6 +6,7 @@
     grid-template-columns: 20vw 20vw 20vw 20vw;
     column-gap: 35px;
     row-gap: 35px;
+    margin-bottom: 35px;
 }
 .container{
     display: flex;
