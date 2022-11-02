@@ -1,0 +1,25 @@
+<div>
+    <div class="table">
+        <div class="address-delivery">
+            <div class="title">Dostawa</div>
+            <div>Miasto: {{data.addressDelivery.city}}</div>
+            <div>Kod pocztowy: {{data.addressDelivery.postalCode}}</div>
+            <div>Ulica: {{data.addressDelivery.street}}</div>
+            <div>Nr budynku: {{data.addressDelivery.buildingNumber}}</div>
+        </div>
+        <div class="fuel">
+            <div class="title">Paliwo</div>
+            <div>Ilość: {{data.count}}</div>
+            <div>Nazwa: {{data.fuel.name}}</div>
+            <div>Cena: {{data.fuel.price}}{{priceUnit}}</div>
+            <div>Jednostka: {{data.fuel.unit}}</div>
+        </div>
+        <div class="date-and-contact">
+            <div class="title">Dane</div>
+            <div>Data: {{data.dateOfOrder}}</div>
+            <div>Email: {{data.email}}</div>
+            <div>Nr telefonu: {{data.phoneNumber}}</div>
+        </div>
+    </div>
+    <div>Opis: {{data.description}}</div>
+</div>

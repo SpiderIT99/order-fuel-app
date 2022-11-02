@@ -1,11 +1,11 @@
 <div class="container">
     <div class="order-list">
-        <div *ngFor="let item of orderListData;">
-            <app-order-list-block [data]="item" (click)="activateOrderPreview(item)">
+        <div *ngFor="let item of orderListData; let index = index">
+            <app-order-list-block [data]="item" (click)="activateOrderPreview(index)">
             </app-order-list-block>
         </div>
     </div>
     <app-popup class="popup" *ngIf="activeView" (disablePopup)="exitOrderPreview()">
-        
+        <app-order-preview [data]="dataOrderPreview"></app-order-preview>
     </app-popup>
 </div>

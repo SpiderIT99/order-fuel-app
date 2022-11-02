@@ -1,0 +1,13 @@
+.table{
+    display: flex;
+}
+.address-delivery, .date-and-contact, .fuel {
+    .title{
+        border-bottom: none;
+        background-color: #5c3092;
+        color: white;
+    }
+    div{
+        border-bottom: 1px gray solid;
+    }
+}

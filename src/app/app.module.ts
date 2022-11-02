@@ -16,6 +16,7 @@ import { ItemInputFormComponent } from './components/item-input-form/item-input-
 import { ItemTextareaFormComponent } from './components/item-textarea-form/item-textarea-form.component';
 import { ToastComponent } from './components/toast/toast.component';
 import { OrderListBlockComponent } from './components/order-list-block/order-list-block.component';
+import { OrderPreviewComponent } from './components/order-preview/order-preview.component';
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { OrderListBlockComponent } from './components/order-list-block/order-lis
     ItemTextareaFormComponent,
     ToastComponent,
     OrderListBlockComponent,
+    OrderPreviewComponent,
   ],
   imports: [
     BrowserModule,
