@@ -8,7 +8,7 @@ import { OrderService } from 'src/app/_core/services/order.service';
   styleUrls: ['./order-list.component.scss']
 })
 export class OrderListComponent implements OnInit {
-  public orderListData: OrderList[] = [];
+  public dataOrderList: OrderList[] = [];
   activeView: boolean = false;
   activeIndex: number = 0;
   dataOrderPreview: OrderList = new OrderList;
@@ -21,19 +21,24 @@ export class OrderListComponent implements OnInit {
 
   private getOrder(): void {
     this.orderService.getOrder().subscribe((response: OrderList[]) => {
-      this.orderListData = response;
+      this.dataOrderList = response;
     }, error => {
       console.error("error: ", error);
     })
   }
 
   activateOrderPreview(index: number): void {
-    this.dataOrderPreview = this.orderListData[index];
+    this.dataOrderPreview = this.dataOrderList[index];
     this.activeIndex = index;
     this.activeView = true;
   }
 
   exitOrderPreview(): void {
     this.activeView = false;
+  }
+
+  changePreviewOrder(currentIndex: number): void {
+    this.activeIndex = currentIndex;
+    this.dataOrderPreview = this.dataOrderList[currentIndex];
   }
 }

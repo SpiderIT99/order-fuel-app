@@ -20,9 +20,9 @@
             <div class="error-step-form">
                 <div *ngIf="isErrorStepOne">{{errorStepForm}}</div>
             </div>
-            <nav>
+            <div>
                 <button type="button" (click)="checkStepOne()">Dalej</button>
-            </nav>
+            </div>
         </ng-container>
 
         <ng-container *ngIf=orderDetailsForm>
@@ -53,10 +53,10 @@
             <div class="error-step-form">
                 <div *ngIf="isErrorFullForm">{{errorStepForm}}</div>
             </div>
-            <nav class="end-btns">
+            <div class="end-btns">
                 <button type="button" (click)="toggleScreen('personalData')">Poprzedni krok</button>
                 <button type="submit">Zatwierdź</button>
-            </nav>
+            </div>
         </ng-container>
     </div>
 </form>

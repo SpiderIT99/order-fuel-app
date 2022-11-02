@@ -22,4 +22,11 @@
         </div>
     </div>
     <div>Opis: {{data.description}}</div>
+    <footer>
+        <div>{{activeIndex+1}}/{{maxIndex+1}}</div>
+        <div class="btns">
+            <button *ngIf="previous" (click)="changePreview(-1)">Poprzedni</button>
+            <button *ngIf="next" (click)="changePreview(+1)">Następny</button>
+        </div>
+    </footer>
 </div>
