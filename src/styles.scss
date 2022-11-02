@@ -5,7 +5,63 @@
     margin: 0;
     padding: 0;
     font-family: 'Inter', sans-serif;
+    outline: none;
 }
 h1,h2,h3,a,p{
     cursor: default;
+}
+button{
+    width: 200px;
+    height: 50px;
+    background-color: #f2cb2c;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+
+
+/* order-block and order-list-block components */
+
+.block{ // order block and order list block
+    padding: 20px;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center;
+    background-color: #efc22b;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.img-block{
+    margin: 20px 0;
+    width: 25%;
+}
+
+
+
+/* order and order-list components */
+
+.list-blocks{ // list bloks in order page and order-list page
+    margin-top: 20vh;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw 20vw;
+    column-gap: 35px;
+    row-gap: 35px;
+    margin-bottom: 35px;
+}
+.container-page{
+    display: flex;
+    justify-content:center;
+    width: 100vw;
+}
+.popup-position{
+    position: absolute;
+    z-index: 1;
+}
+.toast-position{
+    position: fixed;
+    right: 50px;
+    top: 25px;
+    z-index: 2;
 }

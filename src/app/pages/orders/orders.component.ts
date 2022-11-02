@@ -4,8 +4,7 @@ import { Fuel } from "../../_core/models/fuel.model";
 
 @Component({
   selector: 'app-order',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.scss']
+  templateUrl: './orders.component.html'
 })
 export class OrdersComponent implements OnInit {
   public orderBlockData: Fuel[] = [];
