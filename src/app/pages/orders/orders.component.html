@@ -8,10 +8,15 @@
             </app-order-block>
         </div>
     </div>
+
     <app-popup class="popup-position" *ngIf="activeForm" (disablePopup)="exitForm()">
+        <!-- ng-content -->
         <app-order-form [data]="dataToForm" (showSubmissionNotification)="showToast($event)">
         </app-order-form>
+        <!-- end ng-content -->
     </app-popup>
+
     <app-toast class="toast-position" *ngIf="showNotification" [errorSubmitedForm]="errorSubmitedForm">
     </app-toast>
+
 </div>

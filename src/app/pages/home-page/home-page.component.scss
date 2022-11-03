@@ -1,4 +1,4 @@
-$custom-pink: #d05484;
+$custom-pink-color: #d05484;
 
 .main-section{
     height: 95vh;
@@ -14,7 +14,7 @@ $custom-pink: #d05484;
     width: 50vw;
 }
 .square{
-    background-color: $custom-pink;
+    background-color: $custom-pink-color;
     width: 200px;
     height: 20px;
     border-radius: 1px;
@@ -38,7 +38,7 @@ img{
 }
 footer{
     height: 5vh;
-    background-color: $custom-pink;;
+    background-color: $custom-pink-color;
     display: flex;
     align-items:flex-end;
     justify-content:space-around;

@@ -8,9 +8,12 @@
             </app-order-list-block>
         </div>
     </div>
+
     <app-popup class="popup-position" *ngIf="activeView" (disablePopup)="exitOrderPreview()">
+        <!-- ng-content -->
         <app-order-preview [data]="dataOrderPreview" [activeIndex]="activeIndex" [maxIndex]="dataOrderList.length-1"
             (changePreviewOrder)="changePreviewOrder($event)">
         </app-order-preview>
+        <!-- end ng-content -->
     </app-popup>
 </div>

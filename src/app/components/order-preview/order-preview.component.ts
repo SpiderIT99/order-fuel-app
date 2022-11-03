@@ -23,12 +23,12 @@ export class OrderPreviewComponent implements OnChanges, OnInit {
     this.checkCurrentOrder();
   }
 
-  checkCurrentOrder(): void {
+  checkCurrentOrder(): void { //if the preview is on the first order it disables the "Poprzedni" button and if on the last order it disables the "Następny" button
     this.activeIndex == this.maxIndex ? this.next = false : this.next = true;
     this.activeIndex == 0 ? this.previous = false : this.previous = true;
   }
 
-  changePreview(changeValue: number): void {
+  changePreview(changeValue: number): void { //change to preview next or previous order
     this.changePreviewOrder.emit(this.activeIndex + changeValue);
   }
 }

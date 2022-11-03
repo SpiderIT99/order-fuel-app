@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
 
+$custom-gold-color: #f2cb2c;
+
 *{
     box-sizing: border-box;
     margin: 0;
@@ -13,7 +15,7 @@ h1,h2,h3,a,p{
 button{
     width: 200px;
     height: 50px;
-    background-color: #f2cb2c;
+    background-color: $custom-gold-color;
     border-radius: 5px;
     font-weight: bold;
     cursor: pointer;
@@ -29,7 +31,7 @@ button{
     flex-direction:column;
     justify-content: center;
     align-items: center;
-    background-color: #efc22b;
+    background-color: $custom-gold-color;
     border-radius: 5px;
     cursor: pointer;
 }

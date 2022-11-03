@@ -38,12 +38,12 @@ export class OrdersComponent implements OnInit {
 
   showToast(errorSubmitedForm: boolean): void {
     errorSubmitedForm? undefined : this.exitForm(); //if there is an error when submitting the form then stay on the form
-    this.errorSubmitedForm = errorSubmitedForm; //value determines notification  (success or failure)
+    this.errorSubmitedForm = errorSubmitedForm; //value determines toast notification (success or failure)
     this.showNotification = true;
     this.disableToast(3000);
   }
 
-  disableToast(durationNotification: number): void {
+  disableToast(durationNotification: number): void { //durationNotification is the time until the toast disappears (amount given in milliseconds) 
     setTimeout( () => {this.showNotification = false}, durationNotification);
   }
 }
