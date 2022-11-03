@@ -58,7 +58,7 @@ button{
     width: 100vw;
 }
 .popup-position{
-    position: absolute;
+    position: fixed;
     z-index: 1;
 }
 .toast-position{
