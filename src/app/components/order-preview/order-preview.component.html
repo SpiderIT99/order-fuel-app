@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="table">
+        <div class="column">
+            <div class="title">Dostawa</div>
+            <div>Miasto: {{data.addressDelivery.city}}</div>
+            <div>Kod pocztowy: {{data.addressDelivery.postalCode}}</div>
+            <div>Ulica: {{data.addressDelivery.street}}</div>
+            <div>Nr budynku: {{data.addressDelivery.buildingNumber}}</div>
+        </div>
+        <div class="column">
+            <div class="title">Paliwo</div>
+            <div>Ilość: {{data.count}}</div>
+            <div>Nazwa: {{data.fuel.name}}</div>
+            <div>Cena: {{data.fuel.price}}{{priceUnit}}</div>
+            <div>Jednostka: {{data.fuel.unit}}</div>
+        </div>
+        <div class="column">
+            <div class="title">Dane</div>
+            <div>Data: {{data.dateOfOrder.slice(0,10)}}</div>
+            <div>Email: {{data.email}}</div>
+            <div>Nr telefonu: {{data.phoneNumber}}</div>
+        </div>
+    </div>
+    <div class="description"><span>Opis:</span> {{data.description}}</div>
+    <footer>
+        <div class="current-order-number">{{activeIndex+1}}/{{maxIndex+1}}</div>
+        <div class="btns">
+            <button *ngIf="previous" (click)="changePreview(-1)">Poprzedni</button>
+            <button *ngIf="next" (click)="changePreview(+1)">Następny</button>
+        </div>
+    </footer>
+</div>

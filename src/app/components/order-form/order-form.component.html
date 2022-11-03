@@ -1,8 +1,10 @@
 <form (ngSubmit)="submitOrder()">
     <div class="container">
         <h1 class="title">{{data.name}}</h1>
+        
         <ng-container *ngIf=personalDataForm>
             <div class="step-one-form">
+                <!-- step one form -->
                 <app-item-input-form class="count-input" #count [placeholder]="'99'" [span]="'Ilość'"
                     [formControlNameValue]="orderForm.get('count')">
                 </app-item-input-form>
@@ -13,20 +15,24 @@
                     [formControlNameValue]="orderForm.controls['fuel'].get('unit')">
                 </app-item-input-form>
                 <app-item-textarea-form class="description-input" #description [placeholder]="''"
-                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')" 
-                    [rows]="4" [maxlength]="250">
+                    [span]="'Opisz dokładne parametry'" [formControlNameValue]="orderForm.get('description')" [rows]="4"
+                    [maxlength]="250">
                 </app-item-textarea-form>
             </div>
+
             <div class="error-step-form">
                 <div *ngIf="isErrorStepOne">{{errorStepForm}}</div>
             </div>
-            <nav>
+
+            <div>
                 <button type="button" (click)="checkStepOne()">Dalej</button>
-            </nav>
+            </div>
+
         </ng-container>
 
         <ng-container *ngIf=orderDetailsForm>
             <div class="step-two-form">
+                <!-- step two form -->
                 <div>
                     <app-item-input-form [placeholder]="'email@email.com'" [span]="'Email'"
                         [formControlNameValue]="orderForm.get('email')">
@@ -50,13 +56,16 @@
                     </app-item-input-form>
                 </div>
             </div>
+
             <div class="error-step-form">
                 <div *ngIf="isErrorFullForm">{{errorStepForm}}</div>
             </div>
-            <nav class="end-btns">
+
+            <div class="end-btns">
                 <button type="button" (click)="toggleScreen('personalData')">Poprzedni krok</button>
                 <button type="submit">Zatwierdź</button>
-            </nav>
+            </div>
+
         </ng-container>
     </div>
 </form>

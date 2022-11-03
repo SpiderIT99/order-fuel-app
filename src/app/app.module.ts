@@ -15,6 +15,8 @@ import { PopupComponent } from './components/popup/popup.component';
 import { ItemInputFormComponent } from './components/item-input-form/item-input-form.component';
 import { ItemTextareaFormComponent } from './components/item-textarea-form/item-textarea-form.component';
 import { ToastComponent } from './components/toast/toast.component';
+import { OrderListBlockComponent } from './components/order-list-block/order-list-block.component';
+import { OrderPreviewComponent } from './components/order-preview/order-preview.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { ToastComponent } from './components/toast/toast.component';
     ItemInputFormComponent,
     ItemTextareaFormComponent,
     ToastComponent,
+    OrderListBlockComponent,
+    OrderPreviewComponent,
   ],
   imports: [
     BrowserModule,

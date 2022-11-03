@@ -1,1 +1,19 @@
-<p>order-list works!</p>
+<!-- SCSS in global styles.scss -->
+
+<div class="container-page">
+    <div class="list-blocks">
+        <!-- order list -->
+        <div *ngFor="let item of dataOrderList; let index = index">
+            <app-order-list-block [data]="item" (click)="activateOrderPreview(index)">
+            </app-order-list-block>
+        </div>
+    </div>
+
+    <app-popup class="popup-position" *ngIf="activeView" (disablePopup)="exitOrderPreview()">
+        <!-- ng-content -->
+        <app-order-preview [data]="dataOrderPreview" [activeIndex]="activeIndex" [maxIndex]="dataOrderList.length-1"
+            (changePreviewOrder)="changePreviewOrder($event)">
+        </app-order-preview>
+        <!-- end ng-content -->
+    </app-popup>
+</div>

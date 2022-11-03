@@ -1,14 +1,22 @@
-<div class="container">
-    <div class="shopping-options-container">
+<!-- SCSS in global styles.scss -->
+
+<div class="container-page">
+    <div class="list-blocks">
+        <!-- shopping options container -->
         <div *ngFor="let item of orderBlockData;">
             <app-order-block [data]="item" (click)="activateForm(item)">
             </app-order-block>
         </div>
     </div>
-    <app-popup class="popup" *ngIf="activeForm" (disablePopup)="exitForm()">
+
+    <app-popup class="popup-position" *ngIf="activeForm" (disablePopup)="exitForm()">
+        <!-- ng-content -->
         <app-order-form [data]="dataToForm" (showSubmissionNotification)="showToast($event)">
         </app-order-form>
+        <!-- end ng-content -->
     </app-popup>
-    <app-toast class="toast" *ngIf="showNotification" [errorSubmitedForm]="errorSubmitedForm">
+
+    <app-toast class="toast-position" *ngIf="showNotification" [errorSubmitedForm]="errorSubmitedForm">
     </app-toast>
+
 </div>

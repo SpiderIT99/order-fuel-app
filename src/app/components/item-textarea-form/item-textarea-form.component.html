@@ -1,6 +1,8 @@
 <app-item-form-order [span]="span" [formControlNameValue]="formControlNameValue">
+    <!-- ng-content -->
     <textarea class="textarea-input" placeholder="{{placeholder}}" [formControl]="formControlNameValue"
         maxlength="{{maxlength}}" rows="{{rows}}" (keydown.enter)="($event.preventDefault())"
         (keyup)="characterCounter($event)"></textarea>
     <div class="character-counter">{{textLength}}/{{maxlength}}</div>
+    <!-- end ng-content -->
 </app-item-form-order>

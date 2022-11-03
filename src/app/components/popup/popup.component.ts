@@ -9,7 +9,7 @@ import { HostListener } from '@angular/core';
 export class PopupComponent {
   @Output() disablePopup = new EventEmitter<null>();
   @HostListener('window:keyup.escape')
-  keyEvent(): void {
+  exitPopup(): void {
     this.disablePopup.emit();
   }
 }
