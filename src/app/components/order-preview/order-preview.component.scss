@@ -7,7 +7,6 @@
 }
 .table{
     display: flex;
-    width: 40vw;
 }
 
 .column {
@@ -46,4 +45,28 @@ footer{
 .btns{
     display: flex;
     column-gap: 40px;
+}
+
+
+/* responsiveness */
+
+
+
+
+@media only screen and (max-width: 1450px){
+    .container{
+        width: 50vw;
+    }
+    .btns{
+        column-gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .container{
+        width: 60vw;
+    }
+    .btns{
+        column-gap: 20px;
+    }
 }
