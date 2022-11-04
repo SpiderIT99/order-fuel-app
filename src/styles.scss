@@ -34,6 +34,8 @@ button{
     background-color: $custom-gold-color;
     border-radius: 5px;
     cursor: pointer;
+
+    min-width: 230px;
 }
 .img-block{
     margin: 20px 0;
@@ -44,18 +46,23 @@ button{
 
 /* order and order-list components */
 
+
+.container-page{
+    display: flex;
+    justify-content:center;
+    width: 100vw;
+    
+    min-width: 1000px;
+    min-height: 600px;
+}
 .list-blocks{ // list bloks in order page and order-list page
-    margin-top: 20vh;
+    margin-top: 5vh;
+    padding-top: 120px;
     display: grid;
     grid-template-columns: 20vw 20vw 20vw 20vw;
     column-gap: 35px;
     row-gap: 35px;
     margin-bottom: 35px;
-}
-.container-page{
-    display: flex;
-    justify-content:center;
-    width: 100vw;
 }
 .popup-position{
     position: fixed;
@@ -66,4 +73,40 @@ button{
     right: 50px;
     top: 25px;
     z-index: 2;
+}
+
+
+
+
+
+
+/* responsiveness */
+
+
+
+@media only screen and (max-width: 1600px){
+    .list-blocks{
+        column-gap: 30px;
+        row-gap: 30px;
+    }
+}
+
+@media only screen and (max-width: 1450px){
+    .list-blocks{
+        column-gap: 25px;
+        row-gap: 25px;
+    }
+    .list-blocks{
+        grid-template-columns: 21vw 21vw 21vw 21vw;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    .list-blocks{
+        column-gap: 20px;
+        row-gap: 20px;
+    }
+    .list-blocks{
+        grid-template-columns: 22vw 22vw 22vw 22vw;
+    }
 }
