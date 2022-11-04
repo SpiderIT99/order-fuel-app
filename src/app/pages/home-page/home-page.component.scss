@@ -4,6 +4,9 @@ $custom-pink-color: #d05484;
     display: flex;
     height: 95vh;
     width: 100vw;
+    
+    min-width: 1000px;
+    min-height: 600px;
 }
 .about-application{
     display: flex;
@@ -36,7 +39,7 @@ p{
     align-items: flex-end;
 }
 img{
-    height: 90%;
+    height: 80%;
 }
 footer{
     height: 5vh;
@@ -44,10 +47,64 @@ footer{
     display: flex;
     align-items:flex-end;
     justify-content:space-around;
+
+    min-width: 1000px;
 }
 .bottom-square{
     background-color: #f8e59a;
     height: 33%;
     width: 10%;
     border-radius: 10px 10px 0 0;
+}
+
+
+
+/* responsiveness */
+
+
+
+@media only screen and (max-width: 1600px){
+    h2{
+        font-size: 1.35em;
+        line-height: 28.8px;
+    }
+    p{
+        font-size: 0.9em;
+        line-height: 21.6px;
+    }
+    img{
+        height: 70%;
+    }
+}
+
+@media only screen and (max-width: 1450px){
+    h2{
+        font-size: 1.2em;
+        line-height: 25.6px;
+    }
+    p{
+        font-size: 0.8em;
+        line-height: 19.2px;
+    }
+    img{
+        height: 60%;
+    }
+    .about-application{
+        width: 60%;
+    }
+    .application-screen{
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width: 1250px){
+    img{
+        height: 50%;
+    }
+    .about-application{
+        width: 70%;
+    }
+    .application-screen{
+        width: 30%;
+    }
 }
